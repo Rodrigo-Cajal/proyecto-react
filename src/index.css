@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  label {
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  input, textarea {
+    padding: 10px;
+  }
+  
+  input.input-error,
+  select.input-error, textarea.input-error {
+    border-color: red;
+  }
+  
+  .error {
+    color: red;
+    font-size: smaller;
+  }
+  
+  .enviado {
+    color: white;
+    background-color: green;
+    padding: 5px;
+    text-align: center;
+  }
+
+  form > textarea {
+    border-width: 2px;
+    border-radius: 0.375rem;
+    margin-bottom: 0.25rem;
+  }
+
+  form > input {
+    border-width: 2px;
+    border-radius: 0.375rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .menuHamb {
+    border-top: solid 1px  !important;
+  }
