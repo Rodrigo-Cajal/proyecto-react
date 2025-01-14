@@ -7,14 +7,12 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "./redux/store.js";
 
 createRoot(document.getElementById("root")).render(
-  <>
-    
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <App />
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
-  </>
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <App />
+      </BrowserRouter>
+    </PersistGate>
+  </Provider>
 );
+
