@@ -17,7 +17,7 @@ export const AboutusHome = () => {
                 <h5 className='text-center font-semibold text-lg py-4'>Experiencia especializada</h5>
                 <p className='text-justify'>Cualquier detalle que necesites acorde a tus características, nuestros especialistas están aquí para ayudarte a tomar decisiones informadas.</p>
             </div>
-            <div className='px-5 py-10 lg:px-4 lg:py-2 lg:mt-20 '>
+            <div className='px-5 py-10 lg:px-4 lg:py-2  '>
                 <img src="https://res.cloudinary.com/dkifusffi/image/upload/v1700232049/landing-react/q2f960shs7xpbkfpwqao.jpg" alt="compromiso" className='object-cover w-[100%] h-[100%]'/>
                 <h5 className='text-center font-semibold text-lg py-4'>Compromiso con el Cliente</h5>
                 <p className='text-justify'>Estamos comprometidos a brindarte un servicio de alta calidad que refleje nuestro compromiso con los clientes apasionados por el baloncesto.</p>

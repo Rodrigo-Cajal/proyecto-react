@@ -1,25 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Menu, X } from 'lucide-react';
 import ShoppingCartComponent from '../cart/cart';
+import { toggleMenu, toggleCart, closeMenu } from '../../redux/ui/uiSlice';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    setIsCartOpen(false);
-  };
-
-  const toggleCart = () => {
-    setIsCartOpen(!isCartOpen);
-    setIsMenuOpen(false);
-  };
+  const dispatch = useDispatch();
+  const isMenuOpen = useSelector((state) => state.ui.isMenuOpen);
+  const isCartOpen = useSelector((state) => state.ui.isCartOpen);
 
   useEffect(() => {
     const handleScroll = () => {
       if (isMenuOpen) {
-        setIsMenuOpen(false);
+        dispatch(closeMenu());
       }
     };
 
@@ -28,7 +21,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, dispatch]);
 
   return (
     <nav className="fixed top-0 w-full bg-white shadow-md z-50 text-center">
@@ -70,11 +63,11 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center">
-            <ShoppingCartComponent isOpen={isCartOpen} toggleCart={toggleCart} />
+            <ShoppingCartComponent isOpen={isCartOpen} toggleCart={() => dispatch(toggleCart())} />
 
             <button
               className="md:hidden ml-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-              onClick={toggleMenu}
+              onClick={() => dispatch(toggleMenu())}
               aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -88,7 +81,7 @@ const Navbar = () => {
           <div
             className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40"
             style={{ top: '5rem' }}
-            onClick={toggleMenu}
+            onClick={() => dispatch(toggleMenu())}
           ></div>
           <div className="fixed right-0 top-20 bottom-0 w-1/2 bg-white z-50 overflow-auto">
             <div className="flex flex-col h-full p-4 border-t-[0.5px] border-gray-300">
