@@ -24,7 +24,7 @@ export const ProductsHome = () => {
               <CardProducts {...producto} key={producto.id} />
             ))}
           </div>
-          <a href='/productos' className='bg-sky-300 text-black py-2 px-4 mx-[43%] my-10 flex justify-center items-center text-center rounded-md'>Ver todos los productos</a>
+          <a href='/productos' className='bg-sky-300 text-black py-2 px-4 mx-[30%] lg:mx-[43%] my-10 flex justify-center items-center text-center rounded-md'>Ver todos los productos</a>
         </div>
       );
       
