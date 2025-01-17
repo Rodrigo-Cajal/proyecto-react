@@ -45,17 +45,17 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                <a href="/nosotros" className="hover:text-gray-600">
+                <a href="/aboutus" className="hover:text-gray-600">
                   Nosotros
                 </a>
               </li>
               <li>
-                <a href="/productos" className="hover:text-gray-600">
+                <a href="/products" className="hover:text-gray-600">
                   Productos
                 </a>
               </li>
               <li>
-                <a href="/contacto" className="hover:text-gray-600">
+                <a href="/contact" className="hover:text-gray-600">
                   Contacto
                 </a>
               </li>

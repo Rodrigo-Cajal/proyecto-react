@@ -25,7 +25,7 @@ export const AboutusHome = () => {
             </div>
             
         </div>
-        <a href='/nosotros' className='bg-sky-300 text-black py-2 px-4 mx-[30%]  lg:mx-[43%] lg:mb-20 my-10 flex justify-center items-center text-center rounded-md'>Saber más</a>
+        <a href='/aboutus' className='bg-sky-300 text-black py-2 px-4 mx-[30%]  lg:mx-[43%] lg:mb-20 my-10 flex justify-center items-center text-center rounded-md'>Saber más</a>
         </div>
   )
 }

@@ -15,9 +15,9 @@ export const Routes = () => {
         <ReactDomRoutes>
           <Route path="/" element={<Home />} />
 
-          <Route path="/productos" element={<Products/>}/>
-          <Route path="/nosotros" element={<Aboutus/>}/>
-          <Route path="/contacto" element={<Contact/>}/>
+          <Route path="/products" element={<Products/>}/>
+          <Route path="/aboutus" element={<Aboutus/>}/>
+          <Route path="/contact" element={<Contact/>}/>
 
           <Route path="*" element={<p>Error</p>} />
         </ReactDomRoutes>
