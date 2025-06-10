@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { formatPrice } from './formatPrice';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cart/cartSlice';
 
 const CardProducts = ({ id, name, price, image }) => {
   const dispatch = useDispatch();
+  const [added, setAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    dispatch(addToCart({ id, name, price, image }));
+    setAdded(true);
+
+  
+    setTimeout(() => {
+      setAdded(false);
+    }, 2000);
+  };
 
   return (
     <div className='bg-black text-white flex flex-col justify-center items-center m-2 px-4 py-8 rounded-lg'>
@@ -18,10 +29,11 @@ const CardProducts = ({ id, name, price, image }) => {
         </div>
         <div>
           <button
-            className='font-semibold bg-sky-300 rounded-md px-2 py-1 text-black'
-            onClick={() => dispatch(addToCart({ id, name, price, image }))}
+            className={`font-semibold rounded-md px-2 py-1 ${added ? 'bg-green-400' : 'bg-sky-300'} text-black`}
+            onClick={handleAddToCart}
+            disabled={added}
           >
-            Agregar al Carrito
+            {added ? '¡Agregado!' : 'Agregar al Carrito'}
           </button>
         </div>
       </div>

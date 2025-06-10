@@ -19,6 +19,9 @@ export const ProductsHome = () => {
       ? products
       : products.filter(product => product.category === selectedCategory);
 
+
+
+
       return (
         <div className='py-10 px-6 flex flex-col'>
           <h2 className='text-3xl font-bold text-center py-14'>Productos Destacados</h2>
@@ -29,12 +32,14 @@ export const ProductsHome = () => {
           <div className='grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-5 gap-4'>
           {filteredProducts.map(producto => (
           <CardProducts
+          key={producto.id}  
             id={producto.id}
             name={producto.name}
             price={producto.price}
             image={producto.image}
           />
-        ))}
+          
+        ) )}
           </div>
           <a href='/products' className='bg-sky-300 text-black py-2 px-4 mx-[30%] lg:mx-[43%] my-10 flex justify-center items-center text-center rounded-md'>Ver todos los productos</a>
         </div>
